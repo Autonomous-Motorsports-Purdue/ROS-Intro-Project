@@ -1,4 +1,4 @@
-# intro-project
+# ROS-Intro-Project
 
 ## Objective
 This project involves creating a ROS package that uses turtlesim. The objective is to create a simulation where one turtle is controlled by the user (using turtle_teleop_key) and the other turtle follows the controlled turtle *without using the tf package*. An idea of what this should look like can be seen below where the green turtle is controlled using turtle_teleop_key and the white turtle follows the green turtle.
