@@ -17,8 +17,8 @@ Finally, this project will get you familiar with Git/GitHub, and our code review
 ## Submission Instructions
 1. Please fork this repository.
 2. Push your newly created catkin workspace (initialize the git repository at 'build', 'devel', 'src' level) on the master branch.
-3. Create a new branch (name it something like solution-dev) and develop your soltuion within that branch.
+3. Create a new branch (name it something like solution-dev) and develop your soltuion within that branch of your forked repo.
 4. Push committs to remote as you iterately develop your solution. 
-5. Once your solution is complete and pushed, create a pull request to merge your development branch into master. Add the software leads (GitHub users @zghera, @gfaout, and @ihagedo) as reviewers for your PR.
-6. Respond to any code-review comments until you have approvals from all code reviewers.
+5. Once your solution is complete and pushed, create a pull request to merge your development branch into this repo's master brach. Add the software leads (GitHub users @zghera, @gfaout, and @ihagedo) as reviewers for your PR.
+6. Respond to any code-review comments until you have approvals from all code reviewers. Once things looks good, we will give you our approval and then close the PR (we can't have your great solution sitting in the repo unfortunately).
 7. Be proud of your great work and get ready to contribute to contribute to the AMP codebase!
