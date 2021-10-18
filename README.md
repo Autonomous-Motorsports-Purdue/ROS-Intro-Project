@@ -22,3 +22,37 @@ Finally, this project will get you familiar with Git/GitHub, and our code review
 5. Once your solution is complete and pushed, create a pull request to merge your development branch into master. Add the software leads (GitHub users @zghera, @gfaout, and @ihagedo) as reviewers for your PR.
 6. Respond to any code-review comments until you have approvals from all code reviewers.
 7. Be proud of your great work and get ready to contribute to contribute to the AMP codebase!
+
+## How to Run
+1. Initialize roscore.
+```text
+$ roscore
+```
+2. In another terminal, initialize the turtlesim node.
+```text
+$ rosrun turtlesim turtlesim_node
+```
+3. In another terminal, run the teleop node.
+```text
+$ rosrun turtlesim turtle_teleop_key
+```
+4. Spawn a new turtle.
+```text
+$ rosservice call /spawn 2 2 0.2 ""
+```
+5. Go the the workspace directory (intro_project)
+6. Run these two commands
+```text
+$ catkin_make
+$ source ./devel/setup.bash
+```
+7. Run the turtle.py node in another terminal.
+```text
+$ rosrun follow_turtle turtle.py
+```
+8. Lastly, go to the terminal running teleop and move the turtle, you should see the other turtle following the one you are moving!
+
+# Comments
+These are things I could do, but didn't because it wasn't that necessary, just QOL changes.
+* Could probably have rosservice be called within node
+* Could have all of it run with a launch
