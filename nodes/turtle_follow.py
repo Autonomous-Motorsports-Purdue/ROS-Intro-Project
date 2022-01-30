@@ -14,7 +14,6 @@ user_pose = Pose()
 follower_pose = Pose()
 
 def setup_listeners():
-    rospy.init_node('follow_controller', anonymous=True)
     rospy.Subscriber('turtle1/pose', Pose, user_pose_callback)
     rospy.Subscriber('follower/pose', Pose, follower_pose_callback)
 
@@ -38,23 +37,23 @@ def control_follower():
             angle_to_target += math.pi * 2
             
         # angle math that I bruteforced
-        angle_diff = follower_pose.theta - angle_to_target
-        if (angle_diff < 0): # normalize again
-            angle_diff += math.pi * 2
-        angle_diff -= math.pi
-        angle_diff /= math.pi
-        angle_diff = 1 - angle_diff
-        if angle_diff > 1:
-            angle_diff -= 2
+        delta_angle = follower_pose.theta - angle_to_target
+        if (delta_angle < 0): # normalize again
+            delta_angle += math.pi * 2
+        delta_angle -= math.pi
+        delta_angle /= math.pi
+        delta_angle = 1 - delta_angle
+        if delta_angle > 1:
+            delta_angle -= 2
         
-        direction = Twist()
-        direction.angular.z = angle_diff * follower_turn_speed
+        control_input = Twist()
+        control_input.angular.z = delta_angle * follower_turn_speed
         slowdown_coeff = math.sqrt(delta_x ** 2 + delta_y ** 2) / follower_slowdown_dist
         if (slowdown_coeff > 1):
             slowdown_coeff = 1
-        direction.linear.x = follower_move_speed * slowdown_coeff
+        control_input.linear.x = follower_move_speed * slowdown_coeff
         
-        pub.publish(direction)
+        pub.publish(control_input)
         rate.sleep()
 
 if __name__ == '__main__':
@@ -65,6 +64,8 @@ if __name__ == '__main__':
         rospy.wait_for_service('follower/set_pen')
         set_pen = rospy.ServiceProxy('follower/set_pen', SetPen)
         set_pen(255, 0, 0, 3, 0)
+	
+    	rospy.init_node('turtle_follow', anonymous=True)
         setup_listeners()
         control_follower()
     except rospy.ROSInterruptException:
