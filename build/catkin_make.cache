@@ -1,0 +1,2 @@
+intro-project
+-DCATKIN_DEVEL_PREFIX=/home/burhanr/ros/ROS-Intro-Project/devel -DCMAKE_INSTALL_PREFIX=/home/burhanr/ros/ROS-Intro-Project/install -G Unix Makefiles
