@@ -1,0 +1,8 @@
+prefix=/home/burhanr/ros/ROS-Intro-Project/devel
+
+Name: intro-project
+Description: Description of intro-project
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
