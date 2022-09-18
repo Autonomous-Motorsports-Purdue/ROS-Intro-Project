@@ -1,0 +1,6 @@
+<launch>
+    <node name="turtlesim" pkg="turtlesim" type="turtlesim_node" />
+    <node name="teleop_turtle" pkg="turtlesim" type="turtle_teleop_key" />
+    <node name="rosservice" pkg="rosservice" type="rosservice" args="call /spawn 3 3 0 turtle2" />
+    <node name="turtlefollow" pkg="intro-project" type="turtlefollow.py" />
+</launch>
