@@ -1,0 +1,8 @@
+prefix=/home/hayagreev/ROS-Intro-Project/intro-project/devel
+
+Name: intro-project-package
+Description: Description of intro-project-package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
