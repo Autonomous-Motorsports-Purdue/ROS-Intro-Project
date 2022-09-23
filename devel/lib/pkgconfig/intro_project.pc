@@ -1,0 +1,8 @@
+prefix=/home/ryankros/ROS-Intro-Project/devel
+
+Name: intro_project
+Description: Description of intro_project
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
